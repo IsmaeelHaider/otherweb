@@ -1,10 +1,7 @@
 import React from 'react';
 
 const BucketScreen = () => {
-    return (
-
-        <></>
-    );
+  return <></>;
 };
 
 export default BucketScreen;
