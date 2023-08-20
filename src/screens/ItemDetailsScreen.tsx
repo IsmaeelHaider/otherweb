@@ -57,21 +57,27 @@ const ItemDetailsScreen = ({navigation}) => {
         </Card>
       </ScrollView>
       <View style={styles.counterButtonView}>
-        <Button
-          style={styles.counterButton}
-          title={'-'}
-          onPress={() => {
-            itemQuantity > 0 ? setItemQuantity(itemQuantity - 1) : itemQuantity;
-          }}
-        />
-        <Button style={styles.counterButton} title={itemQuantity.toString()} />
-        <Button
-          style={styles.counterButton}
-          title={'+'}
-          onPress={() => {
-            setItemQuantity(itemQuantity + 1);
-          }}
-        />
+        <View style={styles.counterButton}>
+          <Button
+            title={'-'}
+            onPress={() => {
+              itemQuantity > 0
+                ? setItemQuantity(itemQuantity - 1)
+                : itemQuantity;
+            }}
+          />
+        </View>
+        <View style={styles.counterButton}>
+          <Button title={itemQuantity.toString()} />
+        </View>
+        <View style={styles.counterButton}>
+          <Button
+            title={'+'}
+            onPress={() => {
+              setItemQuantity(itemQuantity + 1);
+            }}
+          />
+        </View>
       </View>
       <Button title={'Add to Cart'} onPress={handleAddToCart} />
     </>
@@ -83,7 +89,7 @@ const styles = StyleSheet.create({
   counterButton: {
     width: 50,
     height: 50,
-    marginRight: 8,
+    marginRight: 10,
   },
   imageBox: {
     width: '100%',

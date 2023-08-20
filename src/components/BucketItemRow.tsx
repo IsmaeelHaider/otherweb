@@ -21,21 +21,25 @@ export default function BucketItemRow({item}) {
       </ListItem.Content>
 
       <View style={styles.counterButtonView}>
-        <Button
-          style={styles.counterButton}
-          title={'-'}
-          onPress={() => {
-            dispatch(decreaseQuantity(item._id));
-          }}
-        />
-        <Button style={styles.counterButton} title={item.quantity.toString()} />
-        <Button
-          style={styles.counterButton}
-          title={'+'}
-          onPress={() => {
-            dispatch(increaseQuantity(item._id));
-          }}
-        />
+        <View style={styles.counterButton}>
+          <Button
+            title={'-'}
+            onPress={() => {
+              dispatch(decreaseQuantity(item._id));
+            }}
+          />
+        </View>
+        <View style={styles.counterButton}>
+          <Button title={item.quantity.toString()} />
+        </View>
+        <View style={styles.counterButton}>
+          <Button
+            title={'+'}
+            onPress={() => {
+              dispatch(increaseQuantity(item._id));
+            }}
+          />
+        </View>
       </View>
     </ListItem>
   );
