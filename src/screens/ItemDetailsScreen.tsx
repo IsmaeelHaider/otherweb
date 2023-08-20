@@ -4,8 +4,9 @@ import {useSelector, useDispatch} from 'react-redux';
 import {ScrollView, View, StyleSheet} from 'react-native';
 import {Text, Card, Avatar, Button} from '@rneui/themed';
 import {setQuantity} from '../features/bucket/bucketSlice';
+import {StackActions} from '@react-navigation/native';
 
-const ItemDetailsScreen = () => {
+const ItemDetailsScreen = ({navigation}) => {
   const bucketData = useSelector(state => state.bucket.value);
   const data = useSelector(state => state.items.value);
 
@@ -33,6 +34,7 @@ const ItemDetailsScreen = () => {
     if (itemQuantity >= 0) {
       // Logic to add to cart
       dispatch(setQuantity({...itemDetails, quantity: itemQuantity}));
+      navigation.dispatch(StackActions.pop(1));
     }
   };
   return (

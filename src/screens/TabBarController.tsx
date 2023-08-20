@@ -24,7 +24,7 @@ const TabBarController = () => {
               tabBarLabel: 'Home',
               tabBarColor: '#009387',
               tabBarIcon: ({color}) => (
-                <MaterialCommunityIcons name="home" color={color} size={30} />
+                <MaterialCommunityIcons name="home" color={color} size={25} />
               ),
             }}
           />
@@ -36,7 +36,7 @@ const TabBarController = () => {
               tabBarColor: '#5f9ea0',
               tabBarBadge: bucketData.length ? bucketData.length : false,
               tabBarIcon: ({color}) => (
-                <MaterialCommunityIcons name="cart" color={color} size={30} />
+                <MaterialCommunityIcons name="cart" color={color} size={25} />
               ),
             }}
           />

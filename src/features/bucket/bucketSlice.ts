@@ -19,10 +19,35 @@ export const bucketSlice = createSlice({
         state.value.push(action.payload);
       }
     },
+    decreaseQuantity: (state, action) => {
+      const index = state.value.findIndex(object => {
+        return object._id === action.payload;
+      });
+      const item = {
+        ...state.value[index],
+        quantity: state.value[index].quantity - 1,
+      };
+      if (item.quantity === 0) {
+        state.value.splice(index, 1);
+      } else {
+        state.value[index] = item;
+      }
+    },
+    increaseQuantity: (state, action) => {
+      const index = state.value.findIndex(object => {
+        return object._id === action.payload;
+      });
+      const item = {
+        ...state.value[index],
+        quantity: state.value[index].quantity + 1,
+      };
+      state.value[index] = item;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const {setQuantity} = bucketSlice.actions;
+export const {setQuantity, decreaseQuantity, increaseQuantity} =
+  bucketSlice.actions;
 
 export default bucketSlice.reducer;
