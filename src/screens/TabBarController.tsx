@@ -22,7 +22,7 @@ const TabBarController = () => {
             component={StackController}
             options={{
               tabBarLabel: 'Home',
-              tabBarColor: '#009387',
+              tabBarColor: 'rgba(0,0,0,0)',
               tabBarIcon: ({color}) => (
                 <MaterialCommunityIcons name="home" color={color} size={25} />
               ),

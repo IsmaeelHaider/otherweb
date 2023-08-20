@@ -7,7 +7,7 @@ export const bucketSlice = createSlice({
   },
   name: 'bucket',
   reducers: {
-    setQuantity: (state, action: PayloadAction) => {
+    setQuantity: (state, action: PayloadAction<object>) => {
       const index = state.value.findIndex(object => {
         return object._id === action.payload._id;
       });
